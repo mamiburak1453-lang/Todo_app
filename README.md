@@ -1,0 +1,35 @@
+# Todo_app
+Bu proje benim yaptığım ilk projem. yani eskiden bir tane daha yapmıştım da onu yanlışlıkla yapmıştım. Neyse bu projede yapılacaklar listesi web sitesi oluşturdum. 
+
+# 🚀 Modern Yapılacaklar Listesi
+
+[![Web Version](https://img.shields.io/badge/Web-Version-blue)](https://kullaniciadiniz.github.io/todo-app)
+[![Python Version](https://img.shields.io/badge/Python-Version-green)](https://github.com/kullaniciadiniz/todo-app)
+
+## 🌟 Özellikler
+- 🎨 **Uzay Temalı** modern arayüz
+- 📱 **Responsive** tasarım
+- 💾 **Local Storage** ile veri kaydetme
+- ⚡ **Animasyonlar** ve smooth geçişler
+- 🎯 **Öncelik** seviyeleri
+- 📅 **Tarih** seçici
+
+## 🖥 Web Versiyonu
+**Hemen Dene:** [Canlı Demo](https://kullaniciadiniz.github.io/todo-app)
+
+### 🎮 Kullanım:
+1. **Görev Ekle** → Alt kısımdan görev yaz
+2. **Liste Oluştur** → Sol menüden + butonu
+3. **Tamamla** → Göreve çift tıkla
+4. **Sil** → Sil butonuna tıkla
+
+## 🐍 Python Versiyonu
+### Kurulum:
+```bash
+# 1. Python'u yükleyin (3.6+)
+# 2. Dosyayı indirin
+# 3. Terminalde çalıştırın:
+python yapilacaklar.py.
+
+Sorularınız İçin:
+mamiburak1453@gmail.com
