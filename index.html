@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 Yapılacaklar Listem</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- HEADER -->
+        <header class="app-header">
+            <div class="header-content">
+                <h1 class="app-title">
+                    <i class="fas fa-check-circle"></i>
+                    Yapılacaklar Listem
+                </h1>
+                <div class="stats">
+                    <span class="stat-item">
+                        <i class="fas fa-tasks"></i>
+                        <span id="totalTasks">0</span> Toplam
+                    </span>
+                    <span class="stat-item">
+                        <i class="fas fa-check"></i>
+                        <span id="completedTasks">0</span> Tamamlandı
+                    </span>
+                    <span class="stat-item">
+                        <i class="fas fa-clock"></i>
+                        <span id="pendingTasks">0</span> Bekliyor
+                    </span>
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            <!-- SIDEBAR - LİSTELER -->
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <h3><i class="fas fa-folder"></i> Listelerim</h3>
+                    <button class="btn-add-list" id="addListBtn">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <nav class="list-nav">
+                    <ul id="listsContainer">
+                        <!-- Listeler buraya dinamik olarak eklenecek -->
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- MAIN PANEL -->
+            <section class="main-panel">
+                <!-- GÖREV EKLEME ALANI -->
+                <div class="task-input-section">
+                    <div class="input-group">
+                        <input type="text" 
+                               id="taskInput" 
+                               placeholder="Yeni görev ekleyin..."
+                               class="task-input">
+                        <select id="prioritySelect" class="priority-select">
+                            <option value="low">🟢 Düşük Öncelik</option>
+                            <option value="medium" selected>🟡 Orta Öncelik</option>
+                            <option value="high">🔴 Yüksek Öncelik</option>
+                        </select>
+                        <input type="datetime-local" id="dueDateInput" class="date-input">
+                        <button id="addTaskBtn" class="btn-primary">
+                            <i class="fas fa-plus"></i> Görev Ekle
+                        </button>
+                    </div>
+                </div>
+
+                <!-- GÖREV LİSTESİ -->
+                <div class="tasks-section">
+                    <div class="section-header">
+                        <h3 id="currentListTitle">Genel Listesi</h3>
+                        <div class="section-actions">
+                            <button class="btn-action" id="sortTasksBtn">
+                                <i class="fas fa-sort"></i> Sırala
+                            </button>
+                            <button class="btn-action" id="clearCompletedBtn">
+                                <i class="fas fa-trash"></i> Temizle
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="tasks-container">
+                        <div id="tasksList" class="tasks-list">
+                            <!-- Görevler buraya dinamik olarak eklenecek -->
+                        </div>
+                        <div id="emptyState" class="empty-state">
+                            <i class="fas fa-clipboard-list"></i>
+                            <h4>Henüz görev yok</h4>
+                            <p>Yukarıdan yeni görev ekleyerek başlayın</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- MODALLAR -->
+    <div id="listModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Yeni Liste Ekle</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="newListName" placeholder="Liste adı..." class="modal-input">
+                <div class="color-picker">
+                    <span>Renk:</span>
+                    <div class="color-options">
+                        <div class="color-option" data-color="#3498db" style="background-color: #3498db;"></div>
+                        <div class="color-option" data-color="#e74c3c" style="background-color: #e74c3c;"></div>
+                        <div class="color-option" data-color="#2ecc71" style="background-color: #2ecc71;"></div>
+                        <div class="color-option" data-color="#f39c12" style="background-color: #f39c12;"></div>
+                        <div class="color-option" data-color="#9b59b6" style="background-color: #9b59b6;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="cancelListBtn">İptal</button>
+                <button class="btn-primary" id="saveListBtn">Kaydet</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Görev Detayları</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="editTaskTitle" class="modal-input full-width">
+                <textarea id="editTaskDescription" placeholder="Açıklama..." class="modal-textarea"></textarea>
+                <div class="modal-row">
+                    <select id="editTaskPriority" class="modal-select">
+                        <option value="low">🟢 Düşük</option>
+                        <option value="medium">🟡 Orta</option>
+                        <option value="high">🔴 Yüksek</option>
+                    </select>
+                    <input type="datetime-local" id="editTaskDueDate" class="modal-input">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-danger" id="deleteTaskBtn">Sil</button>
+                <button class="btn-secondary">İptal</button>
+                <button class="btn-primary" id="saveTaskBtn">Kaydet</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- BİLDİRİMLER -->
+    <div id="notification" class="notification">
+        <span id="notificationText"></span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
