@@ -23,6 +23,16 @@ Bu proje benim yaptığım ilk projem. yani eskiden bir tane daha yapmıştım d
 3. **Tamamla** → Göreve çift tıkla
 4. **Sil** → Sil butonuna tıkla
 
+🛠 Teknolojiler
+Frontend: HTML5, CSS3, JavaScript
+
+Python: Tkinter, JSON
+
+Hosting: GitHub Pages
+
+📞 İletişim
+Sorularınız için: mamiburak1453@gmail.com
+
 ## 🐍 Python Versiyonu
 ### Kurulum:
 ```bash
@@ -31,5 +41,3 @@ Bu proje benim yaptığım ilk projem. yani eskiden bir tane daha yapmıştım d
 # 3. Terminalde çalıştırın:
 python yapilacaklar.py.
 
-Sorularınız İçin:
-mamiburak1453@gmail.com
