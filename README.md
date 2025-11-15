@@ -3,8 +3,8 @@ Bu proje benim yaptığım ilk projem. yani eskiden bir tane daha yapmıştım d
 
 # 🚀 Modern Yapılacaklar Listesi
 
-[![Web Version](https://img.shields.io/badge/Web-Version-blue)](https://kullaniciadiniz.github.io/todo-app)
-[![Python Version](https://img.shields.io/badge/Python-Version-green)](https://github.com/kullaniciadiniz/todo-app)
+[![Web Version](https://img.shields.io/badge/Web-Version-blue)](https://mamiburak1453-lang.github.io/todo-app)
+[![Python Version](https://img.shields.io/badge/Python-Version-green)](https://github.com/mamiburak1453-lang/todo-app)
 
 ## 🌟 Özellikler
 - 🎨 **Uzay Temalı** modern arayüz
