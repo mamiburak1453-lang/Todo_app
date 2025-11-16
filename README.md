@@ -15,7 +15,7 @@ Bu proje benim yaptığım ilk projem. yani eskiden bir tane daha yapmıştım d
 - 📅 **Tarih** seçici
 
 ## 🖥 Web Versiyonu
-**Hemen Dene:** [Canlı Demo](https://mami burak.github.io/todo-app)
+**Hemen Dene:** [Canlı Demo](https://mami burak1453-lang.github.io/todo-app)
 
 ### 🎮 Kullanım:
 1. **Görev Ekle** → Alt kısımdan görev yaz
